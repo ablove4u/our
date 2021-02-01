@@ -6,9 +6,9 @@
 $(document).ready(function(){
   $("button").click(function(){
   	
-    $.getJSON("test.js", function(result){
+    $.getJSON("its.js", function(result){
       $.each(result, function(i, field){
-        $("div").append(field + "<br>");
+        $("div").append(field.ITS_ID + "<br>");
       });
     });
   });
