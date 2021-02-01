@@ -1,5 +1,4 @@
-﻿{
-    "Sheet1": [
+﻿[
         {
             "ITS_ID": "20432616",
             "Full_Name": "Baqir bhai  Hatim bhai Kuwazarwala",
@@ -62032,4 +62031,3 @@
             "Password": "60475863"
         }
     ]
-}
