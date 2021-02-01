@@ -1,8 +1,20 @@
 <html>
 <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function(){
-	var name = cname + "=";
+	
+
+  
+  $("button").click(function(){
+  	alert("hi");
+  	document.cookie = "ITS=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  	window.location.href="index.html";
+  });
+
+  var d=document.cookie;
+  var name = "ITS=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
   var cv="";
@@ -16,24 +28,18 @@
       break;
     }
   }
-	alert(cv);
   if(cv=="")
   {
   	window.location.href="index.html";
   }
   else
   {
-  	document.write("<h1>Welcome "+cv+"</h1>");
+  	$("div").append("<h1>Welcome "+cv+"</h1>");
   }
-
   
-  $("button").click(function(){
-  	document.cookie = "ITS=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  	window.location.href="index.html";
-  });
 });
 </script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div></div>
 <button>Logout</button>
 </body>
 </html>
