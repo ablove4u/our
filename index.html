@@ -8,7 +8,7 @@ $(document).ready(function(){
   	
     $.getJSON("its.js", function(result){
       $.each(result, function(i, field){
-        $("div").append(field.ITS_ID + "<br>");
+        $("div").append(field.ITS_ID+"-"+field.Password+ "<br>");
       });
     });
   });
