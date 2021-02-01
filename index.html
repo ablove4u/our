@@ -5,20 +5,38 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-  	
+  	var ino=itsno.value;
+  	var pwd=pass.value;
     $.getJSON("its.js", function(result){
       $.each(result, function(i, field){
-        $("div").append(field.ITS_ID+"-"+field.Password+ "<br>");
+      		if(ino==field,ITS_ID && pwd==field.Password)
+      		{
+      			var d = new Date();
+  				d.setTime(d.getTime() + (24*60*60*1000));
+  				var expires = "expires="+ d.toUTCString();
+  				document.cookie =  "ITS=" + ino + ";" + expires + ";path=/";
+      			window.location.href="welcome.html";
+      		}
+
+          //$("div").append(field.ITS_ID+"-"+field.Password+ "<br>");
       });
+      alert("Invalid ITS No OR Password...");
     });
   });
 });
 </script>
 </head>
 <body>
-
-<button>Get JSON data</button>
-
+<form name="f1" method="post" action="">
+<table>
+	<tr><td>ITS No:</td><td><input id="itsno" value="" type="text" placeholder="ITS No" /></td></tr>
+	<tr><td>Password:</td><td><input id="pass" value="" type="Password" placeholder="Password" /></td></tr>
+<tr><td colspan="2" align="center">
+<button type="submit">Login</button>
+</td>
+</tr>
+</table>
+</form>
 <div></div>
 
 </body>
