@@ -17,13 +17,14 @@ $(document).ready(function(){
   				var expires = "expires="+ d.toUTCString();
   				document.cookie =  "ITS=" + ino + ";" + expires + ";path=/";
       			window.location.href="welcome.html";
+			break;
       		}
 
           //$("div").append(field.ITS_ID+"-"+field.Password+ "<br>");
       });
-      
+       alert("Invalid ITS No OR Password...");
     });
-	  alert("Invalid ITS No OR Password...");
+	 
   });
 });
 </script>
