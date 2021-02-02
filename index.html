@@ -8,20 +8,23 @@ $(document).ready(function(){
 	  
   	var ino=itsno.value;
   	var pwd=pass.value;
+	  var flag=false;
     $.getJSON("its.js", function(result){
       $.each(result, function(i, field){
       		if(ino==field.ITS_ID && pwd==field.Password)
       		{
+			 flag=true;
       			var d = new Date();
   				d.setTime(d.getTime() + (24*60*60*1000));
   				var expires = "expires="+ d.toUTCString();
   				document.cookie =  "ITS=" + field.Full_Name + ";" + expires + ";path=/";
       			window.location.href="welcome.html";
-			
+			return false;
       		}
 
           //$("div").append(field.ITS_ID+"-"+field.Password+ "<br>");
       });
+	    if(flag==false)
        alert("Invalid ITS No OR Password...");
     });
 	 
